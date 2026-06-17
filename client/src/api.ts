@@ -24,7 +24,7 @@ async function request<T>(
   return data as T;
 }
 
-export function getFingerprintHeader() {
+export function getFingerprintHeader(): Record<string, string> {
   const fp = localStorage.getItem('voter_fingerprint');
   return fp ? { 'X-Voter-Fingerprint': fp } : {};
 }
